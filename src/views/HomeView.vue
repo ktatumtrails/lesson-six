@@ -9,9 +9,9 @@ function toggleTheme() {
 }
 
 const links = [
-  { label: 'Website', url: 'https://keithtatum.com', icon: '🌐' },
+  { label: 'Website', url: 'https://visibilityexp.com', icon: '🌐' },
   { label: 'LinkedIn', url: 'https://linkedin.com/in/keithtatum', icon: '💼' },
-  { label: 'Email', url: 'mailto:hello@keithtatum.com', icon: '✉️' },
+  { label: 'Email', url: 'mailto:visibilityexperiments.com', icon: '✉️' },
 ]
 </script>
 
@@ -22,12 +22,24 @@ const links = [
     </button>
 
     <div class="card">
-      <div class="avatar">
-        <span class="avatar-placeholder">KT</span>
+      <div class="header">
+        <div class="avatar">
+          <img src="/keithphoto.jpg" alt="Keith Tatum" class="avatar-img" />
+        </div>
+        <div class="header-text">
+          <h1 class="name">Keith Tatum</h1>
+          <p class="tagline">Experience Strategist · Trail Hiker · Visual Thinker</p>
+        </div>
       </div>
 
-      <h1 class="name">Keith Tatum</h1>
-      <p class="tagline">Developer · Creator · Lifelong Learner</p>
+      <details class="bio-accordion">
+        <summary class="bio-toggle">About Keith</summary>
+        <p class="bio-text">
+          Keith leads experience strategy &amp; design for the Slalom Collective Intelligence team, turning research, knowledge, and insights into intuitive, AI-driven tool experiences, document generators, and custom apps for sales, delivery, and everyday productivity.
+        </p>
+      </details>
+
+      <hr class="divider" />
 
       <div class="links">
         <a
@@ -84,42 +96,102 @@ const links = [
   max-width: 480px;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+
+.header {
+  display: flex;
   align-items: center;
   gap: 1rem;
 }
 
 .avatar {
-  width: 120px;
-  height: 120px;
+  width: 104px;
+  height: 104px;
   border-radius: 50%;
   background: var(--color-background-mute);
   border: 3px solid var(--color-border-hover);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
-  margin-bottom: 0.5rem;
+  flex-shrink: 0;
 }
 
-.avatar-placeholder {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: var(--color-heading);
-  letter-spacing: 0.05em;
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .name {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-heading);
   margin: 0;
 }
 
 .tagline {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--color-text);
   opacity: 0.8;
-  margin: 0 0 1rem;
+  margin: 0;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 0.25rem 0;
+}
+
+.bio-accordion {
+  width: 100%;
+  border-radius: 12px;
+  background: var(--color-background-soft);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.bio-toggle {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-heading);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.2s ease;
+}
+
+.bio-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.bio-toggle::after {
+  content: '▸';
+  transition: transform 0.2s ease;
+}
+
+.bio-accordion[open] .bio-toggle::after {
+  transform: rotate(90deg);
+}
+
+.bio-toggle:hover {
+  background: var(--color-background-mute);
+}
+
+.bio-text {
+  padding: 0 1rem 1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0;
 }
 
 .links {
