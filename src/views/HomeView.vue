@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
 import { RouterLink } from 'vue-router'
+import LinkButton from '@/components/LinkButton.vue'
 
 const theme = useTheme()
 
@@ -47,33 +48,19 @@ const links = [
 
           <!-- Link buttons -->
           <div class="d-flex flex-column ga-3">
-            <v-btn
-              :to="'/about'"
-              variant="tonal"
-              size="large"
-              block
-              rounded="lg"
-              class="text-none"
-            >
-              <v-icon start>mdi-account-outline</v-icon>
-              About Keith
-            </v-btn>
+            <LinkButton
+              label="About Keith"
+              icon="mdi-account-outline"
+              to="/about"
+            />
 
-            <v-btn
+            <LinkButton
               v-for="link in links"
               :key="link.label"
-              :href="link.url"
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="tonal"
-              size="large"
-              block
-              rounded="lg"
-              class="text-none"
-            >
-              <v-icon start>{{ link.icon }}</v-icon>
-              {{ link.label }}
-            </v-btn>
+              :label="link.label"
+              :icon="link.icon"
+              :url="link.url"
+            />
           </div>
 
         </v-col>
