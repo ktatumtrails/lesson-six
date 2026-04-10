@@ -44,10 +44,12 @@ const links = [
             </div>
           </div>
 
-          <v-divider class="mb-6" />
+          <div style="padding: 15px 0;">
+            <v-divider />
+          </div>
 
           <!-- Link buttons -->
-          <div class="d-flex flex-column ga-3">
+          <div class="d-flex flex-column ga-3" style="padding-top: 15px;">
             <LinkButton
               label="About Keith"
               icon="mdi-account-outline"
