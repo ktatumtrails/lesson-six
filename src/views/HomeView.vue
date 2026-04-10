@@ -44,7 +44,7 @@ const links = [
             </div>
           </div>
 
-          <div style="padding: 15px 0;">
+          <div style="padding: 40px 0;">
             <v-divider />
           </div>
 
@@ -64,6 +64,12 @@ const links = [
               :url="link.url"
             />
           </div>
+
+          <div style="padding: 40px 0;">
+            <v-divider />
+          </div>
+
+          <p class="text-caption text-center text-medium-emphasis">Crafted with care &amp; coffee for Protogen 200s Course</p>
 
         </v-col>
       </v-row>
