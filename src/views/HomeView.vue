@@ -33,7 +33,7 @@ const links = [
           </v-btn>
 
           <!-- Header -->
-          <div class="d-flex align-center ga-4 mb-4">
+          <div class="d-flex align-center ga-4 mb-6">
             <v-avatar size="104">
               <v-img src="/keithphoto.jpg" alt="Keith Tatum" cover />
             </v-avatar>
@@ -43,24 +43,22 @@ const links = [
             </div>
           </div>
 
-          <!-- Bio accordion -->
-          <v-expansion-panels variant="accordion" class="mb-2">
-            <v-expansion-panel>
-              <v-expansion-panel-title class="text-body-2 font-weight-medium">
-                About Keith
-              </v-expansion-panel-title>
-              <v-expansion-panel-text class="text-body-2">
-                Keith leads experience strategy &amp; design for the Slalom Collective Intelligence team,
-                turning research, knowledge, and insights into intuitive, AI-driven tool experiences,
-                document generators, and custom apps for sales, delivery, and everyday productivity.
-              </v-expansion-panel-text>
-            </v-expansion-panel>
-          </v-expansion-panels>
-
-          <v-divider class="mb-4" />
+          <v-divider class="mb-6" />
 
           <!-- Link buttons -->
           <div class="d-flex flex-column ga-3">
+            <v-btn
+              :to="'/about'"
+              variant="tonal"
+              size="large"
+              block
+              rounded="lg"
+              class="text-none"
+            >
+              <v-icon start>mdi-account-outline</v-icon>
+              About Keith
+            </v-btn>
+
             <v-btn
               v-for="link in links"
               :key="link.label"
@@ -78,13 +76,6 @@ const links = [
             </v-btn>
           </div>
 
-          <!-- Nav link -->
-          <div class="text-center mt-4">
-            <RouterLink to="/about" class="text-body-2 text-medium-emphasis text-decoration-none nav-link">
-              About Me →
-            </RouterLink>
-          </div>
-
         </v-col>
       </v-row>
     </v-container>
@@ -94,7 +85,5 @@ const links = [
 <style scoped>
 .nav-link:hover {
   opacity: 1;
-}
-</style>
 }
 </style>
