@@ -69,7 +69,7 @@ const links = [
             <v-divider />
           </div>
 
-          <p class="text-caption text-center text-medium-emphasis">Crafted with care &amp; coffee for Protogen 200s Course</p>
+          <p class="text-caption text-center text-medium-emphasis">Crafted with care &amp; coffee for Protogen 200s Course.</p>
 
         </v-col>
       </v-row>
